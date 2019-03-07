@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'pagescontroller@home')->name('home');
+
+Route::get('/about', 'pagescontroller@about' )->name('about');
+
+Route::get('/contact', 'pagescontroller@contact')->name('contact');
+
+Route::post('/contact', 'pagescontroller@store')->name('contact.store');
+
+Route::get('/thanks/{name}', 'pagescontroller@thanks')->name('thanks');
+
+
+
